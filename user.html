@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, {{ username }}!</h1>
+
+        {% if username == 'Shravani' %}
+            <p>Welcome, Shravani! We hope you're ready for a fun adventure today.</p>
+        {% elif username == 'Janhavi' %}
+            <p>Hello Janhavi! You have some new messages waiting for you.</p>
+        {% elif username == 'Darshan' %}
+            <p>Darshan, you are our star! Your achievements are impressive.</p>
+        {% else %}
+            <p>Welcome to your personalized page. We're happy to have you here, {{ username }}!</p>
+        {% endif %}
+
+        <p><a href="/">Back to Homepage</a></p>
+    </div>
+</body>
+</html>
